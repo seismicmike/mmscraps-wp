@@ -15,7 +15,7 @@ Tags: fixed width, three columns, valid XHTML, widgets
 body {
   margin: 0 auto;
   padding: 0;
-  background-color: #c9da9a;
+  background-color: #1b312f;
   background-image: url('images/blue-ribbons-background.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -96,7 +96,7 @@ div.Header-jpeg {
   left: 0;
   width: 954px;
   height: 289px;
-  background-image: url('images/1200x250.png');
+  background-image: url('images/mmscraps-banner.png');
   background-repeat: no-repeat;
   background-position: center center;
 }
@@ -104,7 +104,7 @@ div.Header-jpeg {
 
 /* begin Logo */
 .logo {
-  display: block;
+  display: none;
   position: absolute;
   left: 0px;
   top: 20px;
@@ -248,7 +248,7 @@ h1.logo-name, h1.logo-name a, h1.logo-name a:link, h1.logo-name a:visited, h1.lo
   z-index: -1;
   top: 0;
   height: 23px;
-  background-image: url('images/nav.png');
+  background-color: #f3afa9
 }
 
 .nav .l {
@@ -258,7 +258,7 @@ h1.logo-name, h1.logo-name a, h1.logo-name a:link, h1.logo-name a:visited, h1.lo
 
 .nav .r {
   right: 0;
-  width: 700px;
+  width: 850px;
   clip: rect(auto, auto, auto, 700px);
 }
 
@@ -306,7 +306,7 @@ h1.logo-name, h1.logo-name a, h1.logo-name a:link, h1.logo-name a:visited, h1.lo
   font-weight: bold;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #dde8c0;
+  color: #1b312f;
   padding: 0 22px;
   margin: 0 0px;
   line-height: 23px;
@@ -421,7 +421,8 @@ h1.logo-name, h1.logo-name a, h1.logo-name a:link, h1.logo-name a:visited, h1.lo
 .contentLayout {
   position: relative;
   margin-bottom: 0px;
-  width: 700px;
+  width: 850px;
+  margin: 0 auto;
 }
 /* end ContentLayout */
 
@@ -448,7 +449,6 @@ h1.logo-name, h1.logo-name a, h1.logo-name a:link, h1.logo-name a:visited, h1.lo
 .Block-tr, .Block-tl, .Block-br, .Block-bl {
   width: 30px;
   height: 30px;
-  background-image: url('images/Block-s.png');
 }
 
 .Block-tl {
@@ -479,7 +479,6 @@ h1.logo-name, h1.logo-name a, h1.logo-name a:link, h1.logo-name a:visited, h1.lo
   left: 15px;
   right: 15px;
   height: 30px;
-  background-image: url('images/Block-h.png');
 }
 
 .Block-tc {
@@ -496,7 +495,6 @@ h1.logo-name, h1.logo-name a, h1.logo-name a:link, h1.logo-name a:visited, h1.lo
   top: 15px;
   bottom: 15px;
   width: 30px;
-  background-image: url('images/Block-v.png');
 }
 
 .Block-cr {
@@ -516,12 +514,13 @@ h1.logo-name, h1.logo-name a, h1.logo-name a:link, h1.logo-name a:visited, h1.lo
   left: 15px;
   right: 15px;
   bottom: 15px;
-  background-color: #f5efe5;
 }
 
 
 .Block {
   margin: 7px;
+  border-radius: 10px;
+  background-color: #f3f3f5;
 }
 
 /* end Box, Block */
@@ -568,25 +567,25 @@ h1.logo-name, h1.logo-name a, h1.logo-name a:link, h1.logo-name a:visited, h1.lo
 
 
 .BlockContent-body {
-  color: #738a33;
+  color: #1b312f;
   font-family: Arial, Helvetica, Sans-Serif;
   font-size: 10px;
 }
 
 .BlockContent-body a:link {
-  color: #813f22;
+  color: #f26569;
   font-family: Arial, Helvetica, Sans-Serif;
   text-decoration: underline;
 }
 
 .BlockContent-body a:visited, .BlockContent-body a.visited {
-  color: #af9060;
+  color: #f26569;
   font-family: Arial, Helvetica, Sans-Serif;
   text-decoration: none;
 }
 
 .BlockContent-body a:hover, .BlockContent-body a.hover {
-  color: #a9522d;
+  color: #f3afa9;
   font-family: Arial, Helvetica, Sans-Serif;
   text-decoration: none;
 }
@@ -637,7 +636,7 @@ h1.logo-name, h1.logo-name a, h1.logo-name a:link, h1.logo-name a:visited, h1.lo
 .Post-tr, .Post-tl, .Post-br, .Post-bl {
   width: 20px;
   height: 20px;
-  background-image: url('images/Post-s.png');
+  /*background-image: url('images/Post-s.png');*/
 }
 
 .Post-tl {
@@ -668,7 +667,7 @@ h1.logo-name, h1.logo-name a, h1.logo-name a:link, h1.logo-name a:visited, h1.lo
   left: 10px;
   right: 10px;
   height: 20px;
-  background-image: url('images/Post-h.png');
+  /*background-image: url('images/Post-h.png');*/
 }
 
 .Post-tc {
@@ -685,7 +684,7 @@ h1.logo-name, h1.logo-name a, h1.logo-name a:link, h1.logo-name a:visited, h1.lo
   top: 10px;
   bottom: 10px;
   width: 20px;
-  background-image: url('images/Post-v.png');
+  /*background-image: url('images/Post-v.png');*/
 }
 
 .Post-cr {
@@ -705,12 +704,13 @@ h1.logo-name, h1.logo-name a, h1.logo-name a:link, h1.logo-name a:visited, h1.lo
   left: 10px;
   right: 10px;
   bottom: 10px;
-  background-color: #f5efe5;
 }
 
 
 .Post {
   margin: 10px;
+  border-radius: 10px;
+  background-color: #f3f3f5;
 }
 
 /* Start images */
@@ -744,7 +744,7 @@ a img {
 
 .article th, .article td {
   padding: 2px;
-  border: solid 1px #af9060;
+  border: solid 1px #f26569;
   vertical-align: top;
   text-align: left;
 }
@@ -804,21 +804,21 @@ a img {
   font-family: "Times New Roman", Georgia, Times, Serif;
   text-decoration: none;
   text-align: left;
-  color: #914727;
+  color: #f26569;
 }
 
 .PostHeader a:visited, .PostHeader a.visited {
   font-family: "Times New Roman", Georgia, Times, Serif;
   text-decoration: none;
   text-align: left;
-  color: #5c4a2e;
+  color: #f26569;
 }
 
 .PostHeader a:hover, .PostHeader a.hovered {
   font-family: "Times New Roman", Georgia, Times, Serif;
   text-decoration: underline;
   text-align: left;
-  color: #813f22;
+  color: #f3afa9;
 }
 /* end PostHeader */
 
@@ -831,7 +831,7 @@ a img {
   font-family: Arial, Helvetica, Sans-Serif;
   font-size: 11px;
   letter-spacing: 1px;
-  color: #5a6c28;
+  color: #1b312f;
 }
 
 .PostHeaderIcons a, .PostHeaderIcons a:link, .PostHeaderIcons a:visited, .PostHeaderIcons a:hover {
@@ -843,20 +843,20 @@ a img {
   font-style: normal;
   font-weight: bold;
   text-decoration: none;
-  color: #813f22;
+  color: #f26569;
 }
 
 .PostHeaderIcons a:visited, .PostHeaderIcons a.visited {
   font-family: Arial, Helvetica, Sans-Serif;
   text-decoration: none;
   letter-spacing: 1px;
-  color: #a9522d;
+  color: #f26569;
 }
 
 .PostHeaderIcons a:hover, .PostHeaderIcons a.hover {
   font-family: Arial, Helvetica, Sans-Serif;
   text-decoration: underline;
-  color: #813f22;
+  color: #f3afa9;
 }
 /* end PostIcons */
 
@@ -868,13 +868,13 @@ body {
   font-style: normal;
   font-weight: normal;
   letter-spacing: 1px;
-  color: #738a33;
+  color: #1b312f;
 }
 
 .PostContent {
   font-family: Arial, Helvetica, Sans-Serif;
   letter-spacing: 1px;
-  color: #738a33;
+  color: #1b312f;
 }
 
 
@@ -888,7 +888,7 @@ a {
   font-family: Arial, Helvetica, Sans-Serif;
   text-decoration: underline;
   letter-spacing: 1px;
-  color: #a9522d;
+  color: #f26569;
 }
 
 /* Adds special style to an unvisited link. */
@@ -896,21 +896,21 @@ a:link {
   font-family: Arial, Helvetica, Sans-Serif;
   text-decoration: underline;
   letter-spacing: 1px;
-  color: #a9522d;
+  color: #f26569;
 }
 
 /* Adds special style to a visited link. */
 a:visited, a.visited {
   font-family: Arial, Helvetica, Sans-Serif;
   text-decoration: underline;
-  color: #6d5837;
+  color: #f26569;
 }
 
 /* :hover - adds special style to an element when you mouse over it. */
 a:hover, a.hover {
   font-family: Arial, Helvetica, Sans-Serif;
   text-decoration: none;
-  color: #813f22;
+  color: #f3afa9;
 }
 
 /* Finish Content link style */
@@ -948,7 +948,7 @@ h3, h3 a, h3 a:link, h3 a:visited, h3 a:hover {
   font-size: 18px;
   letter-spacing: 2px;
   text-align: left;
-  color: #8e7348;
+  color: #94bbba;
 }
 
 h4, h4 a, h4 a:link, h4 a:visited, h4 a:hover {
@@ -956,7 +956,7 @@ h4, h4 a, h4 a:link, h4 a:visited, h4 a:hover {
   font-size: 14px;
   letter-spacing: 2px;
   text-align: left;
-  color: #738a33;
+  color: #1b312f;
 }
 
 h5, h5 a, h5 a:link, h5 a:visited, h5 a:hover {
@@ -964,7 +964,7 @@ h5, h5 a, h5 a:link, h5 a:visited, h5 a:hover {
   font-size: 12px;
   letter-spacing: 2px;
   text-align: left;
-  color: #738a33;
+  color: #1b312f;
 }
 
 h6, h6 a, h6 a:link, h6 a:visited, h6 a:hover {
@@ -972,7 +972,7 @@ h6, h6 a, h6 a:link, h6 a:visited, h6 a:hover {
   font-size: 12px;
   letter-spacing: 2px;
   text-align: left;
-  color: #738a33;
+  color: #1b312f;
 }
 /* Finish Content headings Fonts & Colors  */
 /* end PostContent */
@@ -1062,7 +1062,7 @@ blockquote {
   font-size: 11px;
   text-decoration: none;
   letter-spacing: 1px;
-  color: #738a33;
+  color: #1b312f;
 }
 
 .PostFooterIcons a, .PostFooterIcons a:link, .PostFooterIcons a:visited, .PostFooterIcons a:hover {
@@ -1075,21 +1075,21 @@ blockquote {
   font-weight: bold;
   text-decoration: none;
   letter-spacing: 1px;
-  color: #813f22;
+  color: #f26569;
 }
 
 .PostFooterIcons a:visited, .PostFooterIcons a.visited {
   font-family: Arial, Helvetica, Sans-Serif;
   text-decoration: none;
   letter-spacing: 1px;
-  color: #813f22;
+  color: #f26569;
 }
 
 .PostFooterIcons a:hover, .PostFooterIcons a.hover {
   font-family: Arial, Helvetica, Sans-Serif;
   text-decoration: underline;
   letter-spacing: 1px;
-  color: #a9522d;
+  color: #f3afa9;
 }
 /* end PostIcons */
 
@@ -1269,14 +1269,14 @@ input, select {
   font-style: normal;
   font-weight: normal;
   text-decoration: underline;
-  color: #7c9537;
+  color: #f26569;
 }
 
 .page-footer {
   margin: 1em;
   text-align: center;
   text-decoration: none;
-  color: #886e44;
+  color: #f3f3f5;
 }
 /* end PageFooter */
 
@@ -1288,7 +1288,7 @@ input, select {
   border: 0;
   float: left;
   overflow: hidden;
-  width: 500px;
+  width: 607px;
 }
 .contentLayout .content-sidebar1 {
   position: relative;
@@ -1327,7 +1327,7 @@ input, select {
   border: 0;
   float: left;
   overflow: hidden;
-  width: 200px;
+  width: 243px;
 }
 /* end LayoutCell */
 

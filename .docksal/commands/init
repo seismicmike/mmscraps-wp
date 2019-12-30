@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+## Run blt setup commands to prepare your local site for
+## development.
+##
+## Usage: fin init
+##
+# Initialize stack
+fin project start
+fin sync live

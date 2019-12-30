@@ -2,8 +2,8 @@
 Contributors: socialdude, socialtech
 Tags: social media, share, buttons, social widget, icons, share icons, share buttons, sharing icons, sharing buttons, social share, sharing, social sharing
 Requires at least: 3.5
-Tested up to: 5.2.2
-Stable tag: 2.4.2
+Tested up to: 5.3
+Stable tag: 2.4.5
 License: GPLv2 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -274,6 +274,22 @@ You cannot use the same plugin twice, however you can install both the USM as we
 
 
 == Changelog ==
+= 2.4.5 =
+* Updated Export section and success message after export
+* Corrected so that responsive icons don't show on homepage
+* Added Lazy load css to reduce conflicts
+
+= 2.4.4 =
+* All console.log commented.
+* Added new  analyst 5.4.
+* Updated the wp version compatablity.
+* Added Export section.
+
+= 2.4.3 =
+* Updated Url encoded
+* Added auto open of question 3
+* Updated location.href escaped
+* Design changes in show icon after post
 
 = 2.4.2 =
 * Solved the unserialize problem.
@@ -872,5 +888,5 @@ You cannot use the same plugin twice, however you can install both the USM as we
 
 == Upgrade Notice ==
 
-= 2.4.2 =
+= 2.4.5 =
 Please upgrade

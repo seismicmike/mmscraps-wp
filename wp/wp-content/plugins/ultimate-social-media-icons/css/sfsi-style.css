@@ -3131,6 +3131,10 @@ ul.sfsi_icn_listing8 li .tb_4_ck{
     text-decoration: none!important;
     box-shadow: none!important;
 }
+.sfsi_responsive_icons *{
+    box-shadow: none!important;
+}
+
 .sfsi_responsive_icons .sfsi_responsive_icon_facebook_container{ background-color:#336699;}
 .sfsi_responsive_icons .sfsi_responsive_icon_follow_container{ background-color:#00B04E;}
 .sfsi_responsive_icons .sfsi_responsive_icon_twitter_container{ background-color:#55ACEE;}
@@ -3468,4 +3472,30 @@ ul.sfsi_icn_listing8 li .tb_4_ck{
     font-size: 11px !important;
     line-height: 0px !important;
     margin: 0px 0px 0px 0px !important;
+}
+
+/* .sfsi_widget .sfsi_shortcode_container{
+    width: 100%;
+} */
+
+.export_selections{
+    clear: both;
+    color: #afafaf;
+    font-size: 23px;
+    display: flex;
+    height: 0px;
+    position: absolute;
+    top: 13px;
+    right: 0;
+}
+
+.save_export{
+    clear: both;
+    position: relative;
+}
+
+.export{
+    padding-right: 11px;
+    text-decoration: underline;
+    cursor: pointer;
 }

@@ -1574,7 +1574,7 @@ ul.tab_2_email_sec li .radio {
     display: block;
 }
 .tab6 ul.usually {
-    margin: 7px 0 6px 60px;
+    margin: 7px 0 6px 30px;
     padding: 0;
     list-style: none;
 }
@@ -2513,7 +2513,11 @@ p.sfsi_prem_plu_desc a {
 }
 .sfsi_icons_other_allign {
     width: auto;
-    font-size: 15px !important;
+    color: #5a6570;
+    text-align: left;
+    font-family: 'helveticaneue-light';
+    font-size: 17px;
+    line-height: 26px;
 }
 
 /* new notification bar css*/
@@ -3066,7 +3070,7 @@ h2.optional {
 /************************************ Question 3-> Where shall they be displayed? CSS STARTS *************************/
 .tab9 h1 {
     font-size: 20px !important;
-    ont-weight: bold !important;
+    font-weight: bold !important;
     margin-bottom: 20px !important;
 }
 .tab9 span.checkbox {
@@ -3093,7 +3097,7 @@ h2.optional {
 }
 .tab9 ul.sfsi_icn_listing8 li {
     float: left;
-    padding: 11px 0 15px 8px;
+    padding: 11px 0 15px 0;
     width: 100%;
     margin: 0;
 }
@@ -3123,6 +3127,9 @@ h2.optional {
     padding-left: 20px;
     font-size: 19px !important;
     display: table
+}
+#accordion .tab9 .sfsi_icn_listing8 li.sfsi_show_via_afterposts .sfsi_right_info p{
+    font-size: 18px!important;
 }
 #accordion .tab9 .sfsi_icn_listing8 li.sfsi_show_via_shortcode .sfsi_right_info p:last-child {
     padding-top: 0px;
@@ -5283,4 +5290,17 @@ input[type="number"] {
 }
 .sfsi_disable_radio  .labelhdng4{
     opacity: 0.3;
+}
+#ui-id-6 .tab6{
+    margin-left:10px!important;
+}
+#ui-id-6 .tab6 p.sfsi_border_left_0{
+    margin-left:0 !important;
+    padding-left:5px !important;
+}
+#ui-id-6 .tab6 .sfsi_toggleonlystndrshrng{
+    border-left:0!important;
+}
+#ui-id-6 .tab6 .sfsi_toggleonlystndrshrng p{
+    padding-left:0!important;
 }

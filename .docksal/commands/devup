@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+fin drush en stage_file_proxy devel kint update dblog -y
+fin drush cset stage_file_proxy.settings hotlink false -y
+fin drush cset stage_file_proxy.settings origin 'https://bracewell.com' -y
+fin drush cset stage_file_proxy.settings origin_dir 'sites/default/files' -y
+fin drush cset stage_file_proxy.settings use_imagecache_root true -y
+fin drush cset stage_file_proxy.settings verify false -y
+fin drush cset system.logging error_level 'verbose' -y
+fin drush cset system.performance css.preprocess false -y
+fin drush cset system.performance js.preprocess false -y
+fin drush cr

@@ -18,8 +18,8 @@
  * @package WordPress
  */
 
-if (file_exists(__DIR__ . '../../config/wp-settings.php')) {
-  require_once(__DIR__ . '../../config/wp-settings.php');
+if (file_exists(__DIR__ . '/../../config/wp-settings.php')) {
+  require_once(__DIR__ . '/../../config/wp-settings.php');
 }
 
 if (file_exists(__DIR__ . '/settings.local.php')) {

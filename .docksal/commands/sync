@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+ENV=${1:-live}
+shift
+
+cd $PROJECT_ROOT
+rm -f $PROJECT_ROOT/backups/database.sql.gz
+fin drush cache-clear drush -y
+echo "Downloading database"
+terminus backup:create $COMPOSE_PROJECT_NAME.$ENV --element=db
+terminus backup:get $COMPOSE_PROJECT_NAME.$ENV --element=db --to=$PROJECT_ROOT/backups/database.sql.gz
+fin import $PROJECT_ROOT/backups/database.sql.gz
