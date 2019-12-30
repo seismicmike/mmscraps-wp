@@ -168,14 +168,14 @@ function deleteskin_icon(s) {
             iconname: i,
             nonce: nonce
         };
-    console.log('delete sin icon', i, iconname, nonce);
+    // console.log('delete sin icon', i, iconname, nonce);
     SFSI.ajax({
         url: sfsi_icon_ajax_object.ajax_url,
         type: "post",
         data: e,
         dataType: "json",
         success: function (msg) {
-            console.log(s, e, msg);
+            // console.log(s, e, msg);
 
             if (msg.res === "success") {
                 SFSI(s).prev("a").text("Upload");
@@ -629,7 +629,7 @@ function sfsi_update_step4() {
             sfsi_wechat_manualCounts: wcm,
             nonce: nonce
         };
-    console.log($);
+    // console.log($);
     return SFSI.ajax({
         url: sfsi_icon_ajax_object.ajax_url,
         type: "post",
@@ -664,6 +664,9 @@ function sfsi_update_step5() {
         e = SFSI("input[name='sfsi_icons_perRow']").val(),
         t = SFSI("input[name='sfsi_icons_spacing']").val(),
         n = SFSI("#sfsi_icons_Alignment").val(),
+        vw = SFSI("#sfsi_icons_Alignment_via_widget").val(),
+        vs = SFSI("#sfsi_icons_Alignment_via_shortcode").val(),
+
         o = SFSI("input[name='sfsi_icons_ClickPageOpen']:checked").val(),
 
         se = SFSI("input[name='sfsi_icons_suppress_errors']:checked").val(),
@@ -716,6 +719,8 @@ function sfsi_update_step5() {
         action: "updateSrcn5",
         sfsi_icons_size: i,
         sfsi_icons_Alignment: n,
+        sfsi_icons_Alignment_via_widget:  vw,
+        sfsi_icons_Alignment_via_shortcode: vs,
         sfsi_icons_perRow: e,
         sfsi_icons_spacing: t,
         sfsi_icons_ClickPageOpen: o,
@@ -753,7 +758,7 @@ function sfsi_update_step5() {
         sfsi_custom_social_hide: sfsi_custom_social_hide,
         nonce: nonce
     };
-    console.log(T);
+    // console.log(T);
     SFSI.ajax({
         url: sfsi_icon_ajax_object.ajax_url,
         type: "post",
@@ -1632,7 +1637,9 @@ function sfsi_make_popBox() {
 function sfsi_stick_widget(s) {
     0 == initTop.length && (SFSI(".sfsi_widget").each(function (s) {
         initTop[s] = SFSI(this).position().top;
-    }), console.log(initTop));
+    })
+    //  console.log(initTop)
+    );
     var i = SFSI(window).scrollTop(),
         e = [],
         t = [];
@@ -1842,7 +1849,18 @@ if (typeof SFSI != 'undefined') {
 }
 
 SFSI(document).ready(function (s) {
-
+    function sfsi_open_admin_section(id){
+        SFSI("#ui-id-"+(id+1)).show();
+        SFSI("#ui-id-"+id).removeClass("ui-corner-all");
+        SFSI("#ui-id-"+id).addClass("ui-corner-top");
+        SFSI("#ui-id-"+id).addClass("accordion-header-active");
+        SFSI("#ui-id-"+id).addClass("ui-state-active");
+        SFSI("#ui-id-"+id).attr("aria-expanded","false");
+        SFSI("#ui-id-"+id).attr("aria-selected","true");
+        if(SFSI("#ui-id-"+(id+1)).length>0){
+            SFSI("#ui-id-"+(id+1))[0].scrollIntoView(false);
+        }
+    }
     var arrDismiss = [
 
         {
@@ -1864,6 +1882,74 @@ SFSI(document).ready(function (s) {
     SFSI.each(arrDismiss, function (key, valueObj) {
         sfsi_dismiss_notice(valueObj.btnClass, valueObj.action);
     });
+
+    var sfsi_show_option1 = SFSI('input[name="sfsi_show_via_widget"]:checked').val()||'no';
+    var sfsi_show_option2 = SFSI('input[name="sfsi_icons_float"]:checked').val()||'no';
+    var sfsi_show_option3 = SFSI('input[name="sfsi_show_via_shortcode"]:checked').val()||'no';
+    var sfsi_show_option4 = SFSI('input[name="sfsi_show_via_afterposts"]:checked').val()||'no';
+    var sfsi_analyst_popup = SFSI('#sfsi_analyst_pop').attr('data-status');
+    // console.log(sfsi_show_option1);
+    // console.log(sfsi_show_option2);
+    // console.log(sfsi_show_option3);
+    // console.log(sfsi_show_option4);
+    if(sfsi_analyst_popup =="no"){
+        if(sfsi_show_option1=="no" && sfsi_show_option2=='no' && sfsi_show_option3 =='no' && sfsi_show_option4 == 'no'){
+            // console.log('should open');
+            sfsi_open_admin_section(5);
+            // console.log("check if exists",SFSI("#ui-id-5"), SFSI("#ui-id-5").length , SFSI("#ui-id-5").attr('aria-selected')=="false");
+            if(SFSI("#ui-id-5").length==0 || SFSI("#ui-id-5").attr('aria-selected')=="false"){
+                // console.log("'didnt'open in t0");
+                setTimeout(function(){
+                    sfsi_open_admin_section(5);
+                    if(SFSI("#ui-id-5").length==0 ||  SFSI("#ui-id-5").attr('aria-selected')=="false"){
+                        // console.log("'didnt'open in t2");
+
+                        setTimeout(function(){
+                            sfsi_open_admin_section(5);
+
+                            if(SFSI("#ui-id-5").length==0 ||  SFSI("#ui-id-5").attr('aria-selected')=="false"){
+                                // console.log("'didnt'open in t4");
+                                
+                                setTimeout(function(){
+                                    sfsi_open_admin_section(5);
+                                    if(SFSI("#ui-id-5").length==0 ||  SFSI("#ui-id-5").attr('aria-selected')=="false"){
+                                        // console.log("'didnt'open in t6");
+                                        
+                                        setTimeout(function(){
+                                            sfsi_open_admin_section(5);
+                                            
+                                        },2000);
+                                    }                                    
+                                },2000);
+                            }    
+                        },2000);
+                    }
+                    // SFSI('#ui-id-5').click();    
+                },2000);
+            }
+        }
+    }else{
+        SFSI("#analyst-install-skip, #analyst-install-action").click(function(){
+            sfsi_open_admin_section(5);
+            if(SFSI("#ui-id-5").length==1 || SFSI("#ui-id-5").attr('aria-selected')=="false"){
+                setTimeout(function(){
+                    sfsi_open_admin_section(5);
+                    if(SFSI("#ui-id-5").length==1 ||  SFSI("#ui-id-5").attr('aria-selected')=="false"){
+                        setTimeout(function(){
+                            sfsi_open_admin_section(5);
+
+                            if(SFSI("#ui-id-5").length==1 ||  SFSI("#ui-id-5").attr('aria-selected')=="false"){
+                                setTimeout(function(){
+                                    sfsi_open_admin_section(5);
+                                },2000);
+                            }    
+                        },2000);
+                    }
+                    // SFSI('#ui-id-5').click();    
+                },2000);
+            }
+        })
+    }
 
     //changes done {Monad}
     SFSI(".tab_3_icns").on("click", ".cstomskins_upload", function () {
@@ -1888,8 +1974,9 @@ SFSI(document).ready(function (s) {
     SFSI(document).on("click", '.radio', function () {
 
         var s = SFSI(this).parent().find("input:radio:first");
+        var inputName = s.attr("name"); 
+        // console.log(inputName);
 
-        var inputName = s.attr("name");
         var inputChecked = s.attr("checked");
 
         switch (inputName) {
@@ -1916,8 +2003,6 @@ SFSI(document).ready(function (s) {
                 else
                     SFSI('input[name="sfsi_icons_suppress_errors"][value="no"]').attr('checked', 'true');
                 break;
-
-            default:
             case 'sfsi_responsive_icons_end_post':
                 if("yes" == s.val()){
                     jQuery('.sfsi_responsive_icon_option_li.sfsi_responsive_show').show();
@@ -2139,6 +2224,9 @@ SFSI(document).ready(function (s) {
         }),
         SFSI("#sfsi_save9").on("click", function () {
             sfsi_update_step9() && sfsicollapse(this);
+        }),
+        SFSI("#sfsi_save_export").on("click", function () {
+            sfsi_save_export();
         }),
         SFSI("#save_all_settings").on("click", function () {
             return SFSI("#save_all_settings").text("Saving.."), SFSI(".save_button >a").css("pointer-events", "none"),
@@ -2600,7 +2688,7 @@ SFSI(document).ready(function (s) {
         }
 
         if (!error) {
-            console.log("feedid",feedid);
+            // console.log("feedid",feedid);
             if (feedid=="" || undefined==feedid){
                 var nonce = SFSI(this).attr('data-nonce-fetch-feed-id');
                 e = {
@@ -2623,7 +2711,7 @@ SFSI(document).ready(function (s) {
                                     alert("Error: Claiming didn't work. Please try again later.")
                                 }else{
                                     jQuery('#calimingOptimizationForm input[name="feed_id"]').val(feedid);
-                                    console.log("feedid",feedid,SFSI("#calimingOptimizationForm input[name='feed_id']"),SFSI('#calimingOptimizationForm input[name="feedid"]').val());
+                                    // console.log("feedid",feedid,SFSI("#calimingOptimizationForm input[name='feed_id']"),SFSI('#calimingOptimizationForm input[name="feedid"]').val());
                                     SFSI('#calimingOptimizationForm').submit();
                                 }
                             }else{
@@ -2866,7 +2954,7 @@ function sfsi_responsive_icon_intraction_handler() {
     SFSI('select[name="sfsi_responsive_icons_settings_edge_type"]').on('change', function () {
         $target_div = (SFSI(this).parent());
         if (SFSI(this).val() === "Round") {
-            console.log('Round', 'Round', SFSI(this).val());
+            // console.log('Round', 'Round', SFSI(this).val());
 
             $target_div.parent().children().css('display', 'inline-block');
             $target_div.parent().next().css("display","inline-block");
@@ -2874,7 +2962,7 @@ function sfsi_responsive_icon_intraction_handler() {
             jQuery('.sfsi_responsive_icon_preview .sfsi_responsive_icon_item_container,.sfsi_responsive_icon_preview .sfsi_responsive_icons_count').css('border-radius', radius);
 
         } else {
-            console.log('sharp', 'sharp', SFSI(this).val(), $target_div.parent().children(), $target_div.parent().children().hide());
+            // console.log('sharp', 'sharp', SFSI(this).val(), $target_div.parent().children(), $target_div.parent().children().hide());
 
             $target_div.parent().children().hide();
             $target_div.show();
@@ -3323,14 +3411,14 @@ function sfsi_resize_icons_container() {
 }
 
 function sfsi_togglbtmsection(show, hide, ref) {
-    console.log(show,hide);
+    // console.log(show,hide);
     jQuery(ref).parent("ul").children("li.clckbltglcls").each(function (index, element) {
         jQuery(this).children(".radio").css("background-position", "0px 0px");
         jQuery(this).children(".styled").attr("checked", "false");
     });
     jQuery(ref).children(".radio").css("background-position", "0px -41px");
     jQuery(ref).children(".styled").attr("checked", "true");
-    console.log(show,hide);
+    // console.log(show,hide);
 
     jQuery("." + show).show();
     jQuery("." + show).children(".radiodisplaysection").show();
@@ -3341,3 +3429,55 @@ jQuery(document).ready(function(){
     var sfsi_functions_loaded =  new CustomEvent('sfsi_functions_loaded',{detail:{"abc":"def"}});
     window.dispatchEvent(sfsi_functions_loaded);
 });
+
+function sfsi_show_responsive(){
+    var icon_type = jQuery('input[name="sfsi_display_button_type"]:checked').val();
+    var responsive_show = jQuery('input[name="sfsi_responsive_icons_end_post"]:checked').val();
+    setTimeout(function(){
+        // console.log(icon_type, responsive_show,icon_type=="responsive_button" && responsive_show=="yes");
+        if(icon_type=="responsive_button" && responsive_show=="yes"){
+            jQuery('.sfsi_responsive_icon_option_li.sfsi_responsive_show').show();
+        }else{
+            jQuery('.sfsi_responsive_icon_option_li.sfsi_responsive_show').hide();
+        }
+    },100);
+}
+
+ 
+function sfsi_save_export() {
+    var nonce = SFSI("#sfsi_save_export").attr("data-nonce");
+    console.log(nonce);
+	var data = {
+		action: "sfsi_save_export",
+		nonce: nonce
+    };
+    console.log(data);
+	SFSI.ajax({
+		url: sfsi_icon_ajax_object.ajax_url,
+		type: "post",
+		data: data,
+		success: function (s) {
+			console.log(s);
+			if (s == "wrong_nonce") {
+				showErrorSuc("error", "Unauthorised Request, Try again after refreshing page", 6);
+				global_error = 1;
+			} else {
+				var date = new Date();
+				var timestamp = date.getTime();
+				var blob = new Blob([JSON.stringify(s, null, 2)], {
+					type: 'application/json'
+				});
+				var url = URL.createObjectURL(blob);
+				let link = document.createElement("a");
+				link.href = url;
+				link.download = "sfsi_export_options" + timestamp + ".json"
+				link.innerText = "Open the array URL";
+				document.body.appendChild(link);
+				link.click();
+				(showErrorSuc("Settings Exported !", "Settings Exported !", 10));
+			}
+		}
+	});
+
+}
+

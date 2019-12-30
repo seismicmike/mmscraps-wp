@@ -301,7 +301,7 @@ SFSI(document).ready(function(s) {
         var s = parseInt(SFSI(".sfsi_wDiv").height()) + 15 + "px";
         SFSI(".sfsi_holders").each(function() {
             SFSI(this).css("height", s);
-			SFSI(".sfsi_widget").css("min-height", "auto");
+			SFSI(".sfsi_widget");
         });
     }, 200);
 });
@@ -321,7 +321,7 @@ function close_overlay(selector){
 function sfsi_wechat_share(url){
     if(jQuery('.sfsi_wechat_follow_overlay').length==0){
           jQuery('body').append("<div class='sfsi_wechat_follow_overlay sfsi_overlay show'><div class='sfsi_inner_display'><a class='close_btn' href='' onclick='event.preventDefault();close_overlay(\".sfsi_wechat_follow_overlay\")' >×</a><div style='width:95%;max-width:500px; min-height:80%;background-color:#fff;margin:0 auto;margin:10% auto;padding: 20px 0;'><div style='width:90%;margin: 0 auto;text-align:center'><div class='sfsi_wechat_qr_display' style='display:inline-block'></div></div><div style='width:80%;margin:10px auto 0 auto;text-align:center;font-weight:900;font-size:25px;'>\"Scan QR Code\" in WeChat and press ··· to share!</div></div></div>");
-          new QRCode(jQuery('.sfsi_wechat_follow_overlay .sfsi_wechat_qr_display')[0], window.location.href)
+          new QRCode(jQuery('.sfsi_wechat_follow_overlay .sfsi_wechat_qr_display')[0], encodeURI(decodeURI(window.location.href)))
           jQuery('.sfsi_wechat_follow_overlay .sfsi_wechat_qr_display img').attr('nopin','nopin')
       }else{
           jQuery('.sfsi_wechat_follow_overlay').removeClass('hide').addClass('show').show();
@@ -329,14 +329,14 @@ function sfsi_wechat_share(url){
 }
 function sfsi_mobile_wechat_share(url){
     if(jQuery('.sfsi_wechat_follow_overlay').length==0){
-        jQuery('body').append("<div class='sfsi_wechat_follow_overlay sfsi_overlay show'><div class='sfsi_inner_display'><a class='close_btn' href='' onclick=\"event.preventDefault();close_overlay(\'.sfsi_wechat_follow_overlay\')\" >×</a><div style='width:95%; min-height:80%;background-color:#fff;margin:0 auto;margin:30% auto;padding: 20px 0;'><div style='width:90%;margin: 0 auto;'><input type='text' value='"+window.location.href+"' style='width:100%;padding:7px 0;text-align:center' /></div><div style='width:80%;margin:10px auto 0 auto'><div  class='sfsi_upload_butt_container' ><button onclick='sfsi_copy_text_parent_input(event)' class='upload_butt' >Copy</button></div><div class='sfsi_upload_butt_container' ><a href='weixin://' class='upload_butt'>Open WeChat</a></div></div></div></div>");
+        jQuery('body').append("<div class='sfsi_wechat_follow_overlay sfsi_overlay show'><div class='sfsi_inner_display'><a class='close_btn' href='' onclick=\"event.preventDefault();close_overlay(\'.sfsi_wechat_follow_overlay\')\" >×</a><div style='width:95%; min-height:80%;background-color:#fff;margin:0 auto;margin:30% auto;padding: 20px 0;'><div style='width:90%;margin: 0 auto;'><input type='text' value='"+encodeURI(decodeURI(window.location.href))+"' style='width:100%;padding:7px 0;text-align:center' /></div><div style='width:80%;margin:10px auto 0 auto'><div  class='sfsi_upload_butt_container' ><button onclick='sfsi_copy_text_parent_input(event)' class='upload_butt' >Copy</button></div><div class='sfsi_upload_butt_container' ><a href='weixin://' class='upload_butt'>Open WeChat</a></div></div></div></div>");
     }else{
         jQuery('.sfsi_wechat_scan').removeClass('hide').addClass('show');
     }
 }
 function sfsi_copy_text_parent_input(event){
     var target = jQuery(event.target);
-    console.log(target);
+    // console.log(target);
     input_target= target.parent().parent().parent().find('input');
     input_target.select();
     document.execCommand('copy');
@@ -416,7 +416,7 @@ function sfsi_widget_set(){
             var title_hght = jQuery(this).parent(".widget.sfsi").children(".widget-title").height();
             var totl_hght = parseInt( title_hght ) + parseInt( wdgt_hght );
             jQuery(this).parent(".widget.sfsi").css("min-height", totl_hght+"px");
-            console.log('widget');
+            // console.log('widget');
         }
     });
 }

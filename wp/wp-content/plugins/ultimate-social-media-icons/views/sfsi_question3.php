@@ -1,7 +1,11 @@
 <?php
 
 $option9   = unserialize(get_option('sfsi_section9_options', false));
-
+$analyst_cache = unserialize(get_option("analyst_cache"));
+$sfsi_willshow_analyst_popup =false;
+if(!is_null($analyst_cache) && isset($analyst_cache["plugin_to_install"])){	
+	$sfsi_willshow_analyst_popup =true;
+}
 ?>
 
 <div class="tab9">
@@ -11,7 +15,7 @@ $option9   = unserialize(get_option('sfsi_section9_options', false));
 	<ul class="sfsi_icn_listing8">
 
 
-
+	<span id="sfsi_analyst_pop" style="display:none" data-status="<?php echo $sfsi_willshow_analyst_popup?"yes":"no"; ?>" ></span>
 
 	<p class="clear">Please select one or multiple placement options: </p>
 

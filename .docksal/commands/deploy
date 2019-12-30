@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+ENV=${1:-develop}
+echo "Applying Updates deployed to $ENV"
+echo "Running Database Updates"
+terminus drush $COMPOSE_PROJECT_NAME.$ENV -- updb -y
+echo "Importing Configuration Changes"
+terminus drush $COMPOSE_PROJECT_NAME.$ENV -- cim sync -y
+echo "Clearing Drupal Caches"
+terminus drush $COMPOSE_PROJECT_NAME.$ENV -- cr
+echo "Clearing Varnish Caches"
+terminus env:clear-cache $COMPOSE_PROJECT_NAME.$ENV
+echo "Deploy Complete"
+terminus env:view $COMPOSE_PROJECT_NAME.$ENV

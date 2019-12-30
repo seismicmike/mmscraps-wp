@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+cd $PROJECT_ROOT/$DOCROOT
+echo "Dropping all tables on local"
+fin drush sql-drop -y
+echo "Importing database"
+gunzip < "$1" | fin db import 2>/dev/null
+
+if [[ $@ == *no-dev* ]]
+then
+  echo "Skipping local setup"
+else
+  echo "Setting up local development"
+  fin devup
+fi
+
+fin drush cache-rebuild -y
+fin drush sqlq "TRUNCATE cache_entity" -y
+fin login
