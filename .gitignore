@@ -21,6 +21,28 @@ wp/*.log
 wp/wp-content/cache/
 wp/wp-content/backups/
 
+
+public_html/wp-config-local.php
+public_html/wp-cli.local.yml
+public_html/wp-content/uploads
+public_html/wp-content/gallery
+public_html/wp-content/blogs.dir/
+public_html/wp-content/upgrade/
+public_html/wp-content/backup-db/
+public_html/wp-content/updraft/
+public_html/wp-content/backupwordpress-*/
+public_html/wp-content/managewp/backups/
+public_html/wp-content/advanced-cache.php
+public_html/wp-content/wp-cache-config.php
+public_html/wp-content/wflogs
+public_html/sitemap.xml
+public_html/sitemap.xml.gz
+public_html/*.log
+
+# @TODO writable paths
+public_html/wp-content/cache/
+public_html/wp-content/backups/
+
 # Packages #
 ############
 *.7z
